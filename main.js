@@ -1,1 +1,1 @@
-alert("hi");
+(()=>{"use strict";!async function(t){const n=await async function(t){try{const t=await fetch("http://api.openweathermap.org/data/2.5/weather?q=London&APPID=76d5136cd55d14c88e4d9549d0f550f2");return await t.json()}catch(t){console.log("City not found!")}}(),a=n.name,e=n.main.temp,o=n.main.feels_like,c=n.weather;console.log(a,e,o,c)}()})();
