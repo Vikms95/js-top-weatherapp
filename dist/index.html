@@ -9,10 +9,23 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="get">
-        <label for="search"></label>
-        <input type="text" id="search" name="search">
-        <button type="button">Search weather</button>
-    </form>
+  <div class="container">
+    <div class="column-left">
+      <div class="weather">
+        <div class="weather-name"></div>
+        <div class="weather-icon"></div>
+        <div class="city-name"></div>
+        <div class="date"></div>
+      </div>
+      <div class="temperature">45</div>
+      <div class="search">
+        <form action="/">
+            <label for="search"></label>
+            <input type="text" id="search" name="search">
+            <button type="button">Search weather</button>
+        </form>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
