@@ -3,7 +3,8 @@
   - Get a song/playlist randomly based on the weather value via the Spotify API
   - Display loading icon while the data is retrieved and displayed
 
-  - Displaying weather of a city taken from form input
+  - x Displaying weather of a city taken from form input
+  - Display date with date-fns library
   - Display city name, weather, temperature(F/C), feels like, chance of rain, wind speed daily and hourly changes in the future
   - Display an icon next to each value
 
@@ -11,5 +12,9 @@
     - Functions that hit the API
     - Functions that process the JSON data
 - View
-    - Append elements to display
     - Append data to display
+
+
+  - Implement chance of rain
+  - Implement date with date-fns
+  - Style layout

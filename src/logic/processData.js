@@ -9,7 +9,11 @@ export async function processData(city,scale = 'metric'){
         const temperature = data.main.temp
         const feelsLikeTemp = data.main.feels_like
         const weather = data.weather[0].main
-        return{cityName, temperature, feelsLikeTemp, weather, scale}
+        const weatherDescription = data.weather[0].description
+        const feelsLike = data.main.feels_like
+        const humidity = data.main.humidity
+        const windSpeed = data.wind.speed
+        return{cityName, temperature, weather, weatherDescription,feelsLike,humidity,windSpeed, scale}
 
     } catch(err){
         console.log('Not found')
