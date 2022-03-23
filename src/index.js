@@ -1,2 +1,3 @@
-alert('hi')
+import { processData } from './processData'
 
+processData('London')
