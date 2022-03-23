@@ -1,8 +1,10 @@
-*{
-  /* color: white; */
-}
 
 .column-left{
   display: grid;
   grid-template-rows: 2fr 1fr 1fr;
+}
+
+.temperature-display{
+  display: flex;
+  gap: .5rem;
 }
