@@ -9,3 +9,9 @@ export async function processData(city){
     console.log(cityName,temperature,feelsLikeTemp,weather)
 
 }
+
+const but = document.querySelector('button')
+const inp = document.querySelector('input')
+but.addEventListener('click', () =>{
+    processData(inp.value)
+})
