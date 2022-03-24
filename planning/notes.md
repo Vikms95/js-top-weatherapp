@@ -16,6 +16,7 @@
     
   <!-- - Append values of forecast to display -->
   <!-- - Style change scale button -->
+  - Change bg based on weather?
   - Implement date with date-fns
   - Implement loading screen
   - Implement chance of rain (it's on date2?)
