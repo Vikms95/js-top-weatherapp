@@ -36,11 +36,11 @@ export function renderStaticElements(dataToDisplay){
         // const weekday = ''
         const maxTempEl = document.querySelector(`.day${i + 1} > .max-temp`)
         const minTempEl = document.querySelector(`.day${i + 1} > .min-temp`)
-        const weatherEl = document.querySelector(`.day${i + 1} > .weather`)
+        const weatherEl = document.querySelector(`.day${i + 1} > .weather-day`)
         const weatherIconEl = document.querySelector(`.day${i + 1} > .icon`)
 
-        maxTempEl.textContent = Math.ceil(dataToDisplay.dailyForecast[i].temperatureMax) + ' ' + tempIconEl.textContent
-        minTempEl.textContent = Math.ceil(dataToDisplay.dailyForecast[i].temperatureMin) + ' '+ tempIconEl.textContent
+        maxTempEl.textContent = Math.floor(dataToDisplay.dailyForecast[i].temperatureMax) + ' ' + tempIconEl.textContent
+        minTempEl.textContent = Math.floor(dataToDisplay.dailyForecast[i].temperatureMin) + ' '+ tempIconEl.textContent
         weatherEl.textContent = dataToDisplay.dailyForecast[i].weather
         weatherIconEl.innerHTML = `<img src="../icons/${dataToDisplay.dailyForecast[i].icon}.png"></img>`
 

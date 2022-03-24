@@ -12,7 +12,7 @@ const cityNameEl = document.querySelector('.city-name')
 export async function addEventListeners(){
     searchButton.addEventListener('click', async () =>{
         try{
-            const dataToDisplay =  await processData('Barcelona')
+            const dataToDisplay =  await processData(searchInput.value)
             renderStaticElements(dataToDisplay)
         }catch(err){
         }

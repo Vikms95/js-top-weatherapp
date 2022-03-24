@@ -6,13 +6,13 @@ export async function processData(city,scale = 'metric'){
         const {data,data2} = await fetchWeatherAPI(city, scale)
         console.log(data2)
         const cityName = data.name
-        const temperature = Math.ceil(data.main.temp)
+        const temperature = Math.floor(data.main.temp)
         const weather = data.weather[0].main
         const icon = data.weather[0].icon
         const weatherDesc = data.weather[0].description
-        const feelsLike = Math.ceil(data.main.feels_like)
+        const feelsLike = Math.floor(data.main.feels_like)
         const humidity = data.main.humidity
-        const windSpeed = Math.ceil(data.wind.speed)
+        const windSpeed = Math.floor(data.wind.speed)
 
         //TODO Forecast values do an array of objects?
         let dailyForecast = []
