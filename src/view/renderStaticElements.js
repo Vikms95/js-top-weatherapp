@@ -12,6 +12,7 @@ export function renderStaticElements(dataToDisplay){
     const humidityEl = document.querySelector('.humidity-value')
     const windSpeedIconEl = document.querySelector('.wind-speed-icon')
     const windSpeedEl = document.querySelector('.wind-speed-value')
+    // Implement forecast appending with for loop?
     
     weatherEl.textContent = dataToDisplay.weather
     weatherIconEl.innerHTML = `<img src="../icons/${dataToDisplay.icon}.png"></img>`

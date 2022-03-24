@@ -13,6 +13,7 @@
     - Functions that process the JSON data
 - View
     - Append data to display
+    
   - Append values of forecast to display
   - Implement chance of rain (it's on date2)
   - Implement forecast
