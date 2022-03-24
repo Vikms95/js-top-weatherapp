@@ -34,3 +34,10 @@ html,body{
   display: flex;
   gap: .5rem;
 }
+
+.feels-like,
+.humidity,
+.wind-speed{
+  display: flex;
+  gap: .5rem;
+}

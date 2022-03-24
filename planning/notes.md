@@ -15,6 +15,5 @@
     - Append data to display
 
 
-  - Implement chance of rain
   - Implement date with date-fns
   - Style layout
