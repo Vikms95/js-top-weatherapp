@@ -58,12 +58,9 @@ body{
   grid-column: 3/4;  
 }
 
-.weather{
-  justify-content: space-evenly;
-}
-
 .weather,
-.temperature-display{
+.temperature-display,
+.city-name{
   display: flex;
   gap: .5rem;
   font-size: 4rem;
