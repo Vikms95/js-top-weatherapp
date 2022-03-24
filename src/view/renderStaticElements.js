@@ -1,9 +1,11 @@
 // Takes processData as argument
 export function renderStaticElements(dataToDisplay){
     console.log(dataToDisplay)
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
     const weatherEl = document.querySelector('.weather-info')
     const weatherIconEl = document.querySelector('.weather-icon')
     const cityEl = document.querySelector('.city-name')
+    const timeEl = document.querySelector('.date')
     const temperatureEl = document.querySelector('.temperature-value')
     const tempIconEl = document.querySelector('.temperature-icon')
     const feelsLikeIconEl = document.querySelector('.feels-like-icon')
@@ -17,7 +19,8 @@ export function renderStaticElements(dataToDisplay){
     
     weatherEl.textContent = dataToDisplay.weather
     weatherIconEl.innerHTML = `<img src="../icons/${dataToDisplay.icon}.png"></img>`
-    cityEl.textContent = dataToDisplay.cityName
+    cityEl.textContent = dataToDisplay.cityName + ', ' + dataToDisplay.countryName
+    timeEl.textContent = days[dataToDisplay.time.getDay()] + ', ' + dataToDisplay.time.getDate() + ' - ' + dataToDisplay.time.getHours() + ':' + dataToDisplay.time.getMinutes()
     temperatureEl.textContent = dataToDisplay.temperature
     tempIconEl.textContent = dataToDisplay.scale === 'metric' ? 'ºC' : 'ºF'
 

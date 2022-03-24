@@ -4,8 +4,12 @@ import { fetchWeatherAPI } from './fetchWeatherAPI'
 export async function processData(city,scale = 'metric'){
     try{
         const {data,data2} = await fetchWeatherAPI(city, scale)
-        console.log(data2)
+        console.log(data2,data)
         const cityName = data.name
+        const countryName = data.sys.country
+        let time = new Date(new Date().toLocaleString('en-US', {timeZone: data2.timezone}))
+
+        console.log(time)
         const temperature = Math.floor(data.main.temp)
         const weather = data.weather[0].main
         const icon = data.weather[0].icon
@@ -30,6 +34,8 @@ export async function processData(city,scale = 'metric'){
         
         return { 
             cityName,
+            countryName,
+            time,
             temperature,
             weather,
             icon,

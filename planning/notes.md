@@ -16,8 +16,9 @@
     
   <!-- - Append values of forecast to display -->
   <!-- - Style change scale button -->
-  - Change bg based on weather?
-  - Implement date with date-fns
   - Implement loading screen
+    - Set timeout until the timer ends (Promise.race)
+  - Change bg based on weather?
+  -TODO Implement date
   - Implement chance of rain (it's on date2?)
   - Style layout
