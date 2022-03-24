@@ -162,7 +162,7 @@ body{
 .wind-speed{
   display: flex;
   gap: .5rem;
-  align-items: center;
+  align-self: flex-start;
 }
 
 i.fa-magnifying-glass{
