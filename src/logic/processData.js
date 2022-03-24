@@ -21,7 +21,7 @@ export async function processData(city,scale = 'metric'){
     }
 }
 
-const searchButton = document.querySelector('.search-weather')
+const searchButton = document.querySelector('.fa-magnifying-glass')
 const searchInput = document.querySelector('input')
 const changeScaleButton = document.querySelector('.change-scale')
 
