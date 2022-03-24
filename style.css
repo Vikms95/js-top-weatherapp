@@ -2,21 +2,39 @@ html,body{
   margin:0;
   padding: 0;
   height: 100%;
-  background-color: rgb(28, 28, 68);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-
+body{
+  position: relative;
+  background-image: url('../images/bg.jpg');
+  background-size: cover;
+  image-resolution: 200px;
+  height: 100%;
+}
 
 .container{
   height: 100%;
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr;
-  grid-template-rows: 1.2fr 1fr;
+  grid-template-rows: 1.8fr 1fr;
   padding: .5rem 3rem;
   font-weight: 500;
   font-size: 1.3rem;
   gap: 1rem;
+}
+
+.loader{
+  font-size: 2rem;
+  color: white;
+  position: absolute;
+  display: none;
+  left: 800px;
+  top: 300px;
+}
+
+.loader.visible{
+  display: block;
 }
 
 .column-left,
@@ -35,15 +53,25 @@ html,body{
 }
 
 .column-right{
+  font-size: 2rem;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-column: 3/4;  
 }
 
+.weather{
+  justify-content: space-evenly;
+}
 
 .weather,
 .temperature-display{
   display: flex;
   gap: .5rem;
+  font-size: 4rem;
+}
+
+.temperature-icon{
+  font-size: 2rem;
+  font-weight: lighter;
 }
 
 .weather-name{
@@ -122,7 +150,7 @@ html,body{
 }
 .layer{
   width: 100%;
-  background-color: #d3d3d3;
+  background-color: #17c2bd;
   transition: 0.3s ease all;
   z-index: 1;
 }
@@ -165,6 +193,8 @@ input{
 
 .forecast-container{
   display: grid;
+  background-color: rgba(90, 90, 90, 0.3);
+  border-radius: 15px;
   justify-items: center;
   align-items: center;
   gap: 2rem;
@@ -191,7 +221,7 @@ input{
 
 .max-temp,
 .min-temp,
-.weather,
+.weather-day,
 .icon{
  font-size: smaller; 
  size: 1rem;
