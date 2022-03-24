@@ -1,5 +1,5 @@
 // Takes processData as argument
-export function renderStaticElements(dataToDisplay){
+export function renderStaticElements(dataToDisplay,dataToDisplay2){
     console.log(dataToDisplay)
     const weatherEl = document.querySelector('.weather-info')
     const weatherIconEl = document.querySelector('.weather-icon')
@@ -22,11 +22,11 @@ export function renderStaticElements(dataToDisplay){
 
     feelsLikeIconEl.classList.add('fa-solid') 
     feelsLikeIconEl.classList.add('fa-temperature-high') 
-    feelsLikeEl.textContent = dataToDisplay.feelsLike
+    feelsLikeEl.textContent = dataToDisplay.feelsLike + ' ' + tempIconEl.textContent
     humidityIconEl.classList.add('fa-solid') 
     humidityIconEl.classList.add('fa-droplet') 
-    humidityEl.textContent = dataToDisplay.humidity
+    humidityEl.textContent = dataToDisplay.humidity + ' %'
     windSpeedIconEl.classList.add('fa-solid') 
     windSpeedIconEl.classList.add('fa-wind') 
-    windSpeedEl.textContent = dataToDisplay.windSpeed
+    windSpeedEl.textContent = dataToDisplay.windSpeed + ' km/h'
 }
