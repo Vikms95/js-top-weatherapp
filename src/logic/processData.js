@@ -27,6 +27,7 @@ export async function processData(city,scale = 'metric'){
             } 
             dailyForecast.push(values)
         }
+        console.log(dailyForecast)
         
         return { 
             cityName,

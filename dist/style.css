@@ -11,10 +11,10 @@ html,body{
 .container{
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr;
-  grid-template-rows: 2fr 1fr;
+  grid-template-rows: 1.5fr 1fr;
   padding: 3rem;
   font-weight: 900;
-  font-size: 2rem;
+  font-size: 1.3rem;
   gap: 1rem;
 }
 
@@ -28,6 +28,8 @@ html,body{
 .column-left{
   grid-template-rows: 2fr 1fr 1fr ;
   grid-column: 1/2;
+  justify-content: center;
+  align-items: center;
 }
 
 .column-right{
@@ -82,4 +84,5 @@ input{
   grid-template-columns: repeat(7,1fr);
   grid-column: 1/4;
   height: 100%;
+  color: white;
 }

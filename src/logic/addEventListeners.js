@@ -3,6 +3,7 @@ import { renderStaticElements } from '../view/renderStaticElements'
 
 
 const searchButton = document.querySelector('.fa-magnifying-glass')
+// Fixed to a city for testing
 const searchInput = document.querySelector('input')
 const changeScaleButton = document.querySelector('.change-scale')
 const tempIconEl = document.querySelector('.temperature-icon')
