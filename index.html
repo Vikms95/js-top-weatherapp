@@ -14,35 +14,45 @@
   <div class="container">
     <div class="column-left">
       <div class="weather">
-        <div class="weather-name"></div>
-        <div class="weather-icon"></div>
-        <div class="city-name"></div>
-        <div class="date"></div>
-      </div>
-      <div class="temperature">
-        <div class="temperature-display">
-          <div class="temperature-value"></div>
-          <div class="temperature-icon"></div>
+        <div class="weather-name">
+          <div class="weather-info"></div>
+          <div class="">            
+            <div class="temperature-display">
+              <div class="temperature-value"></div>
+              <div class="temperature-icon"></div>
+            </div>
+          </div>
         </div>
-        <button class="change-scale"> Change scale </button>
+        <div class="weather-icon"></div>
       </div>
+        <div class="city-name"></div>
+        <div class="date">Thursday 24th 15:03</div>
+      <button class="change-scale"> Change scale </button>
       <div class="search">
         <form action="/">
-            <label for="search"></label>
-            <input type="text" id="search" name="search">
-            <button class="search-weather"  type="button">Search weather</button>
+            <label for="search">Search city</label>
+            <div class="search-div">
+              <input type="text" id="search" name="search">
+              <div class="search-icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </div>
+            </div>
+            <hr class="underline">
         </form>
       </div>      
     </div>
     <div class="column-right">
+      <div class="feels-like-title">Feels like...</div>
       <div class="feels-like">
         <div class="feels-like-icon"></div>
         <div class="feels-like-value"></div>
       </div>
+      <div class="humidity-title">Humidity</div>
       <div class="humidity">
         <div class="humidity-icon"></div>
         <div class="humidity-value"></div>
       </div>
+      <div class="wind-speed-title">Wind speed</div>
       <div class="wind-speed">
         <div class="wind-speed-icon"></div>
         <div class="wind-speed-value"></div>
