@@ -5,8 +5,8 @@
 
   - x Displaying weather of a city taken from form input
   - Display date with date-fns library
-  - Display city name, weather, temperature(F/C), feels like, chance of rain, wind speed daily and hourly changes in the future
-  - Display an icon next to each value
+  - xDisplay city name, weather, temperature(F/C), feels like, chance of rain, wind speed daily and hourly changes in the future
+  - xDisplay an icon next to each value
 
 - Logic
     - Functions that hit the API
@@ -15,7 +15,8 @@
     - Append data to display
     
   <!-- - Append values of forecast to display -->
-  - Implement chance of rain (it's on date2)
-  - Implement forecast
+  <!-- - Style change scale button -->
   - Implement date with date-fns
+  - Implement loading screen
+  - Implement chance of rain (it's on date2?)
   - Style layout

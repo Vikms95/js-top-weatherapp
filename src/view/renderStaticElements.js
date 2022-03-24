@@ -12,6 +12,7 @@ export function renderStaticElements(dataToDisplay){
     const humidityEl = document.querySelector('.humidity-value')
     const windSpeedIconEl = document.querySelector('.wind-speed-icon')
     const windSpeedEl = document.querySelector('.wind-speed-value')
+    const scaleToChangeEl = document.querySelector('.change-scale-desc')
     // Implement forecast appending with for loop?
     
     weatherEl.textContent = dataToDisplay.weather
@@ -28,7 +29,8 @@ export function renderStaticElements(dataToDisplay){
     humidityEl.textContent = dataToDisplay.humidity + ' %'
     windSpeedIconEl.classList.add('fa-solid') 
     windSpeedIconEl.classList.add('fa-wind') 
-    windSpeedEl.textContent = dataToDisplay.windSpeed + ' km/h'
+    windSpeedEl.textContent = dataToDisplay.windSpeed + ' ' + (dataToDisplay.scale === 'metric' ? 'meter/sec' : 'miles/hour')
+    scaleToChangeEl.textContent = 'Change to ' + (dataToDisplay.scale === 'metric' ? 'imperial' : 'metric')
 
     for (let i = 0; i < dataToDisplay.dailyForecast.length; i++) {
         const div = document.querySelector(`.day${i + 1}`)

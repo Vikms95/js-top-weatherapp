@@ -14,7 +14,6 @@ export async function processData(city,scale = 'metric'){
         const humidity = data.main.humidity
         const windSpeed = Math.floor(data.wind.speed)
 
-        //TODO Forecast values do an array of objects?
         let dailyForecast = []
 
         for (let i = 1; i < 8 ; i++) {
