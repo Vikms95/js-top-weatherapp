@@ -1,6 +1,8 @@
 export async function fetchAPI (city,scale){
+    
     // Get loader element to toogle it's display property while awaiting fetch
     const loaderEl = document.querySelector('.loader')
+    
     try{
         // Display the loader div while the data is fetching
         loaderEl.textContent = 'Loading ...'
@@ -9,13 +11,13 @@ export async function fetchAPI (city,scale){
         // Try to fetch data in less than 5 seconds
         const weatherData = await Promise.race([
             fetchWeatherAPI(city,scale),
-            timeoutPromise(5000)
-        ]).then((weatherData)=>{
+            timeoutPromise(5000)]).then((weatherData)=>{
             
             // If resolve, toogle display to not show
             loaderEl.classList.toggle('visible')
             return weatherData
         })
+
         return weatherData
 
     }catch(err){
@@ -27,6 +29,7 @@ export async function fetchAPI (city,scale){
             loaderEl.classList.toggle('visible')
             loaderEl.textContent = 'Loading ...'
         },2000)
+
         return
     }
 }

@@ -1,13 +1,14 @@
 import { processData } from './processData'
 import { renderStaticElements } from '../view/renderStaticElements'
 
-const searchButton = document.querySelector('.fa-magnifying-glass')
-const searchInput = document.querySelector('input#search')
-const changeScaleButton = document.querySelector('.change-scale')
-const tempIconEl = document.querySelector('.temperature-icon')
-const cityNameEl = document.querySelector('.city-name')
-
 export async function addEventListeners(){
+
+    const searchButton = document.querySelector('.fa-magnifying-glass')
+    const searchInput = document.querySelector('input#search')
+    const changeScaleButton = document.querySelector('.change-scale')
+    const tempIconEl = document.querySelector('.temperature-icon')
+    const cityNameEl = document.querySelector('.city-name')
+
     searchButton.addEventListener('click', async () =>{
         try{
             const dataToDisplay =  await processData(searchInput.value)

@@ -47,10 +47,10 @@ export function renderStaticElements(dataToDisplay){
     console.log(dataToDisplay.icon)
 
     weatherEl.textContent = dataToDisplay.weather
-    weatherIconEl.innerHTML = `<img src="../icons/${dataToDisplay.icon}.png"></img>`
     cityEl.textContent = dataToDisplay.cityName + ', ' + dataToDisplay.countryName
     temperatureEl.textContent = dataToDisplay.temperature
     tempIconEl.textContent = dataToDisplay.scale === 'metric' ? 'ºC' : 'ºF'
+    weatherIconEl.innerHTML = `<img src="../icons/${dataToDisplay.icon}.png"></img>`
     
     timeEl.textContent = weekDayNames[dataToDisplay.time.getDay()] + ', ' 
                          + dataToDisplay.time.getDate() + ' - ' 
@@ -86,10 +86,10 @@ export function renderStaticElements(dataToDisplay){
         const weatherEl = document.querySelector(`.day${i + 1} > .weather-day`)
         const weatherIconEl = document.querySelector(`.day${i + 1} > .icon`)
       
-        weekDayEl.innerHTML = getWeekdayName(dataToDisplay.time.getDay(), i, weekDayNames)
+        weatherEl.textContent = dataToDisplay.dailyForecast[i].weather
         maxTempEl.textContent = Math.floor(dataToDisplay.dailyForecast[i].temperatureMax) + ' ' + tempIconEl.textContent
         minTempEl.textContent = Math.floor(dataToDisplay.dailyForecast[i].temperatureMin) + ' '+ tempIconEl.textContent
-        weatherEl.textContent = dataToDisplay.dailyForecast[i].weather
+        weekDayEl.innerHTML = getWeekdayName(dataToDisplay.time.getDay(), i, weekDayNames)
         weatherIconEl.innerHTML = `<img src="../icons/${dataToDisplay.dailyForecast[i].icon}.png"></img>`
         
         div.appendChild(weekDayEl)
