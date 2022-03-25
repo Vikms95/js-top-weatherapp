@@ -76,6 +76,10 @@ body{
   grid-column: 3/4;  
 }
 
+.column-center{
+  grid-column: 2/3;
+}
+
 .weather,
 .temperature-display,
 .city-name{
