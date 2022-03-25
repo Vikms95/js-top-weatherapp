@@ -14,8 +14,9 @@ export function renderStaticElements(dataToDisplay){
     const windSpeedEl = document.querySelector('.wind-speed-value')
     const scaleToChangeEl = document.querySelector('.change-scale-desc')
     const searchInput = document.querySelector('input#search')
-    
-    weatherEl.textContent = 'Clear'
+    console.log(dataToDisplay)
+
+    weatherEl.textContent = dataToDisplay.weather
     weatherIconEl.innerHTML = `<img src="../icons/${dataToDisplay.icon}.png"></img>`
     cityEl.textContent = dataToDisplay.cityName + ', ' + dataToDisplay.countryName
     temperatureEl.textContent = dataToDisplay.temperature
@@ -54,7 +55,7 @@ export function renderStaticElements(dataToDisplay){
         minTempEl.textContent = Math.floor(dataToDisplay.dailyForecast[i].temperatureMin) + ' '+ tempIconEl.textContent
         weatherEl.textContent = dataToDisplay.dailyForecast[i].weather
         weatherIconEl.innerHTML = `<img src="../icons/${dataToDisplay.dailyForecast[i].icon}.png"></img>`
-        console.log(weatherEl.textContent)
+        
         div.appendChild(weekDayEl)
         div.appendChild(maxTempEl)
         div.appendChild(minTempEl)
@@ -64,7 +65,7 @@ export function renderStaticElements(dataToDisplay){
 }
 
 const getWeekdayName = (currentDay,daysFromToday, weekDayNames) =>{
-    // Get the current day, to know where to start
+    // Get the current day, to know where to start counting from
     let dayToSelect = currentDay + daysFromToday
     if(dayToSelect > 6){
         dayToSelect -= 7
@@ -95,7 +96,6 @@ const getWeekdayName = (currentDay,daysFromToday, weekDayNames) =>{
 //             'Squall': '',
 //             'Tornado': '',
 //         }
-//         console.log(weather)
 //         return backgroundsDay.weather
 //     }
 //     else{

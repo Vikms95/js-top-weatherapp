@@ -21,6 +21,11 @@
     <!-- - Set timeout until the timer ends (Promise.race) -->
   <!-- - Style layout -->
   - Refactor and clean code
+   - Use objects for data management
+   - Try to implement array methods
+   - Remove console.logs and commented code
+   - Try to use shorter lines
+
   -TODO Change bg based on weather?
     - Make an object with keys as possible given weather description, and url to the image as value
   -TODO Implement date properly?
