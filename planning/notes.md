@@ -17,8 +17,10 @@
   <!-- - Append values of forecast to display -->
   <!-- - Style change scale button -->
   - Implement loading screen
+    - Set translucid background
     - Set timeout until the timer ends (Promise.race)
   - Change bg based on weather?
   -TODO Implement date
   - Implement chance of rain (it's on date2?)
+  - Implement Spotify music
   - Style layout
