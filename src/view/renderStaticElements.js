@@ -1,6 +1,5 @@
 // Takes processData as argument
 export function renderStaticElements(dataToDisplay){
-    console.log(dataToDisplay)
     const weekDayNames = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
     const weatherEl = document.querySelector('.weather-info')
     const weatherIconEl = document.querySelector('.weather-icon')
@@ -44,7 +43,6 @@ export function renderStaticElements(dataToDisplay){
         const weatherIconEl = document.querySelector(`.day${i + 1} > .icon`)
 
         weekDayEl.innerHTML = getWeekdayName(dataToDisplay.time.getDay(), i, weekDayNames)
-        console.log(weekDayEl.textContent)
         maxTempEl.textContent = Math.floor(dataToDisplay.dailyForecast[i].temperatureMax) + ' ' + tempIconEl.textContent
         minTempEl.textContent = Math.floor(dataToDisplay.dailyForecast[i].temperatureMin) + ' '+ tempIconEl.textContent
         weatherEl.textContent = dataToDisplay.dailyForecast[i].weather
