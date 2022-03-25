@@ -37,6 +37,7 @@ export function renderStaticElements(dataToDisplay){
     windSpeedEl.textContent = dataToDisplay.windSpeed + ' ' + (dataToDisplay.scale === 'metric' ? 'meter/sec' : 'miles/hour')
     scaleToChangeEl.textContent = 'Change to ' + (dataToDisplay.scale === 'metric' ? 'imperial' : 'metric')
     searchInput.value = ''
+    console.log(weatherEl.textContent)
     
     for (let i = 0; i < dataToDisplay.dailyForecast.length; i++) {
         const div = document.querySelector(`.day${i + 1}`)
@@ -51,7 +52,7 @@ export function renderStaticElements(dataToDisplay){
         minTempEl.textContent = Math.floor(dataToDisplay.dailyForecast[i].temperatureMin) + ' '+ tempIconEl.textContent
         weatherEl.textContent = dataToDisplay.dailyForecast[i].weather
         weatherIconEl.innerHTML = `<img src="../icons/${dataToDisplay.dailyForecast[i].icon}.png"></img>`
-
+        console.log(weatherEl.textContent)
         div.appendChild(weekDayEl)
         div.appendChild(maxTempEl)
         div.appendChild(minTempEl)
@@ -67,4 +68,49 @@ const getWeekdayName = (currentDay,daysFromToday, weekDayNames) =>{
         dayToSelect -= 7
     }
     return weekDayNames[dayToSelect]
+}
+
+const changeBackground = () =>{
+
+    const backgroundsDay = {
+        'Thunderstorm': '',
+        'Drizzle': '',
+        'Rain': '',
+        'Snow' : '', 
+        'Clear': '',
+        'Clouds':'',
+        // 
+        'Mist': '',
+        'Smoke': '',
+        'Haze': '',
+        'Dust': '',
+        'Fog': '',
+        'Sand': '',
+        'Dust': '',
+        'Ash': '',
+        'Squall': '',
+        'Tornado': '',
+
+    }
+
+    const backgroundsNight = {
+        'Thunderstorm': '',
+        'Drizzle': '',
+        'Rain': '',
+        'Snow' : '', 
+        'Clear': '',
+        'Clouds':'',
+        // 
+        'Mist': '',
+        'Smoke': '',
+        'Haze': '',
+        'Dust': '',
+        'Fog': '',
+        'Sand': '',
+        'Dust': '',
+        'Ash': '',
+        'Squall': '',
+        'Tornado': '',
+
+    }
 }

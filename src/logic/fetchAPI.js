@@ -1,7 +1,6 @@
 export async function fetchAPI (city,scale){
     const loaderEl = document.querySelector('.loader')
     try{
-        //TODO Refactor with Promise.all
         loaderEl.textContent = 'Loading ...'
         loaderEl.classList.toggle('visible')
         const data = await Promise.race([
@@ -9,7 +8,6 @@ export async function fetchAPI (city,scale){
             timeoutPromise(5000)
         ]).then(function(resolve){
             loaderEl.classList.toggle('visible')
-
             return resolve
         })
         return data
@@ -24,6 +22,13 @@ export async function fetchAPI (city,scale){
         return
     }
 }
+const timeoutPromise = (delay) =>{
+    return new Promise((reject) =>{
+        setTimeout(() =>{
+            reject('Timeout')
+        }, delay)
+    })
+}
     
 const fetchWeatherAPI = async (city,scale) =>{
     const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=${scale}&appid=76d5136cd55d14c88e4d9549d0f550f2`)
@@ -32,14 +37,4 @@ const fetchWeatherAPI = async (city,scale) =>{
     const data2 = await response2.json()
     return [data,data2]  
 }
-        
-const timeoutPromise = (delay) =>{
-    return new Promise((resolve,reject) =>{
-        setTimeout(() =>{
-            reject('Timeout')
-        }, delay)
-    })
-}
-// const response3 = await fetch('https://api.spotify.com/v1/artists/1vCWHaC5f2uS3yhpwWbIA6/albums?album_type=SINGLE&offset=20&limit=10')
-// const data3 = await response3.json()
-// console.log(data3)
+    
