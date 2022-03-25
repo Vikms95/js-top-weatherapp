@@ -1,4 +1,3 @@
-// Takes processData as argument
 export function renderStaticElements(dataToDisplay){
     const weatherEl = document.querySelector('.weather-info')
     const weatherIconEl = document.querySelector('.weather-icon')
@@ -23,8 +22,8 @@ export function renderStaticElements(dataToDisplay){
     const weekDayNames = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
     timeEl.textContent = weekDayNames[dataToDisplay.time.getDay()] + ', ' 
                          + dataToDisplay.time.getDate() + ' - ' 
-                         + dataToDisplay.time.getHours() + ':' 
-                         + dataToDisplay.time.getMinutes()
+                         + ('0' + dataToDisplay.time.getHours()).slice(-2) + ':' 
+                         + ('0'+ dataToDisplay.time.getMinutes()).slice(-2)
     
     feelsLikeIconEl.classList.add('fa-solid') 
     feelsLikeIconEl.classList.add('fa-temperature-high') 
