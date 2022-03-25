@@ -19,8 +19,9 @@
   <!-- - Implement loading screen -->
     <!-- - Set translucid background -->
     <!-- - Set timeout until the timer ends (Promise.race) -->
-  - Change bg based on weather?
+  <!-- - Style layout -->
+  - Refactor and clean code
+  -TODO Change bg based on weather?
     - Make an object with keys as possible given weather description, and url to the image as value
   -TODO Implement date properly?
   -TODO Implement Spotify music(will need to use Promise.all)
-  <!-- - Style layout -->

@@ -1,4 +1,5 @@
 export function renderStaticElements(dataToDisplay){
+    const bodyEl = document.querySelector('body')
     const weatherEl = document.querySelector('.weather-info')
     const weatherIconEl = document.querySelector('.weather-icon')
     const cityEl = document.querySelector('.city-name')
@@ -14,7 +15,7 @@ export function renderStaticElements(dataToDisplay){
     const scaleToChangeEl = document.querySelector('.change-scale-desc')
     const searchInput = document.querySelector('input#search')
     
-    weatherEl.textContent = dataToDisplay.weather
+    weatherEl.textContent = 'Clear'
     weatherIconEl.innerHTML = `<img src="../icons/${dataToDisplay.icon}.png"></img>`
     cityEl.textContent = dataToDisplay.cityName + ', ' + dataToDisplay.countryName
     temperatureEl.textContent = dataToDisplay.temperature
@@ -37,7 +38,8 @@ export function renderStaticElements(dataToDisplay){
     windSpeedEl.textContent = dataToDisplay.windSpeed + ' ' + (dataToDisplay.scale === 'metric' ? 'meter/sec' : 'miles/hour')
     scaleToChangeEl.textContent = 'Change to ' + (dataToDisplay.scale === 'metric' ? 'imperial' : 'metric')
     searchInput.value = ''
-    console.log(weatherEl.textContent)
+    bodyEl.style.backgroundColor = 'blue'
+  
     
     for (let i = 0; i < dataToDisplay.dailyForecast.length; i++) {
         const div = document.querySelector(`.day${i + 1}`)
@@ -46,7 +48,7 @@ export function renderStaticElements(dataToDisplay){
         const minTempEl = document.querySelector(`.day${i + 1} > .min-temp`)
         const weatherEl = document.querySelector(`.day${i + 1} > .weather-day`)
         const weatherIconEl = document.querySelector(`.day${i + 1} > .icon`)
-
+      
         weekDayEl.innerHTML = getWeekdayName(dataToDisplay.time.getDay(), i, weekDayNames)
         maxTempEl.textContent = Math.floor(dataToDisplay.dailyForecast[i].temperatureMax) + ' ' + tempIconEl.textContent
         minTempEl.textContent = Math.floor(dataToDisplay.dailyForecast[i].temperatureMin) + ' '+ tempIconEl.textContent
@@ -70,47 +72,53 @@ const getWeekdayName = (currentDay,daysFromToday, weekDayNames) =>{
     return weekDayNames[dayToSelect]
 }
 
-const changeBackground = () =>{
+// const changeBackground = (weather,hour) =>{
+// // Change background based on weather and hour values
+// // and change font color if needed
+//     if(hour >= 6 && hour <= 20){
+//         const backgroundsDay = {
+//             'Thunderstorm': '',
+//             'Drizzle': '',
+//             'Rain': '',
+//             'Snow' : '', 
+//             'Clear': '/images/day-clear.jpg',
+//             'Clouds':'',
+//             // 
+//             'Mist': '',
+//             'Smoke': '',
+//             'Haze': '',
+//             'Dust': '',
+//             'Fog': '',
+//             'Sand': '',
+//             'Dust': '',
+//             'Ash': '',
+//             'Squall': '',
+//             'Tornado': '',
+//         }
+//         console.log(weather)
+//         return backgroundsDay.weather
+//     }
+//     else{
+//         const backgroundsNight = {
+//             'Thunderstorm': '',
+//             'Drizzle': '',
+//             'Rain': '',
+//             'Snow' : '', 
+//             'Clear': '',
+//             'Clouds':'',
+//             // 
+//             'Mist': '',
+//             'Smoke': '',
+//             'Haze': '',
+//             'Dust': '',
+//             'Fog': '',
+//             'Sand': '',
+//             'Dust': '',
+//             'Ash': '',
+//             'Squall': '',
+//             'Tornado': '',
 
-    const backgroundsDay = {
-        'Thunderstorm': '',
-        'Drizzle': '',
-        'Rain': '',
-        'Snow' : '', 
-        'Clear': '',
-        'Clouds':'',
-        // 
-        'Mist': '',
-        'Smoke': '',
-        'Haze': '',
-        'Dust': '',
-        'Fog': '',
-        'Sand': '',
-        'Dust': '',
-        'Ash': '',
-        'Squall': '',
-        'Tornado': '',
-
-    }
-
-    const backgroundsNight = {
-        'Thunderstorm': '',
-        'Drizzle': '',
-        'Rain': '',
-        'Snow' : '', 
-        'Clear': '',
-        'Clouds':'',
-        // 
-        'Mist': '',
-        'Smoke': '',
-        'Haze': '',
-        'Dust': '',
-        'Fog': '',
-        'Sand': '',
-        'Dust': '',
-        'Ash': '',
-        'Squall': '',
-        'Tornado': '',
-
-    }
-}
+//         }
+//         return backgroundsNight.weather
+//     }
+// }
