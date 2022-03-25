@@ -14,7 +14,15 @@ export function renderStaticElements(dataToDisplay){
     const windSpeedEl = document.querySelector('.wind-speed-value')
     const scaleToChangeEl = document.querySelector('.change-scale-desc')
     const searchInput = document.querySelector('input#search')
-    console.log(dataToDisplay)
+    const weekDayNames = [
+        'Monday', 
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday',
+        'Sunday'
+    ]
 
     weatherEl.textContent = dataToDisplay.weather
     weatherIconEl.innerHTML = `<img src="../icons/${dataToDisplay.icon}.png"></img>`
@@ -22,7 +30,6 @@ export function renderStaticElements(dataToDisplay){
     temperatureEl.textContent = dataToDisplay.temperature
     tempIconEl.textContent = dataToDisplay.scale === 'metric' ? 'ºC' : 'ºF'
     
-    const weekDayNames = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
     timeEl.textContent = weekDayNames[dataToDisplay.time.getDay()] + ', ' 
                          + dataToDisplay.time.getDate() + ' - ' 
                          + ('0' + dataToDisplay.time.getHours()).slice(-2) + ':' 
@@ -36,12 +43,19 @@ export function renderStaticElements(dataToDisplay){
     humidityEl.textContent = dataToDisplay.humidity + ' %'
     windSpeedIconEl.classList.add('fa-solid') 
     windSpeedIconEl.classList.add('fa-wind') 
-    windSpeedEl.textContent = dataToDisplay.windSpeed + ' ' + (dataToDisplay.scale === 'metric' ? 'meter/sec' : 'miles/hour')
-    scaleToChangeEl.textContent = 'Change to ' + (dataToDisplay.scale === 'metric' ? 'imperial' : 'metric')
     searchInput.value = ''
     bodyEl.style.backgroundColor = 'blue'
+
+    windSpeedEl.textContent = dataToDisplay.windSpeed + ' ' 
+                              + (dataToDisplay.scale === 'metric' 
+                                  ? 'meter/sec' 
+                                  : 'miles/hour')
+
+    scaleToChangeEl.textContent = 'Change to ' 
+                                + (dataToDisplay.scale === 'metric' 
+                                    ? 'imperial' 
+                                    : 'metric')
   
-    
     for (let i = 0; i < dataToDisplay.dailyForecast.length; i++) {
         const div = document.querySelector(`.day${i + 1}`)
         const weekDayEl = document.querySelector(`.day${i + 1} > .weekday`)
@@ -65,7 +79,10 @@ export function renderStaticElements(dataToDisplay){
 }
 
 const getWeekdayName = (currentDay,daysFromToday, weekDayNames) =>{
-    // Get the current day, to know where to start counting from
+  
+    // We substract 7 from the dayToSelect value in case the number
+    // surpasses 'Sunday', so in that case,
+    // it can start counting from Monday
     let dayToSelect = currentDay + daysFromToday
     if(dayToSelect > 6){
         dayToSelect -= 7

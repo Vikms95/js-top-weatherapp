@@ -18,12 +18,12 @@ export async function processData(city,scale = 'metric'){
         let dailyForecast = []
 
         for (let i = 1; i < 8 ; i++) {
-            const day = weatherData.dataSet2.daily[i]
+            const weekDay = weatherData.dataSet2.daily[i]
             const values = {
-                temperatureMax : day.temp.max,
-                temperatureMin : day.temp.min,
-                weather : day.weather[0].main,
-                icon : day.weather[0].icon
+                temperatureMax : weekDay.temp.max,
+                temperatureMin : weekDay.temp.min,
+                weather : weekDay.weather[0].main,
+                icon : weekDay.weather[0].icon
             }
             dailyForecast.push(values)
         }

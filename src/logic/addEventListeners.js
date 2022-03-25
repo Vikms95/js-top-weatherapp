@@ -1,7 +1,6 @@
 import { processData } from './processData'
 import { renderStaticElements } from '../view/renderStaticElements'
 
-
 const searchButton = document.querySelector('.fa-magnifying-glass')
 const searchInput = document.querySelector('input#search')
 const changeScaleButton = document.querySelector('.change-scale')
@@ -19,9 +18,12 @@ export async function addEventListeners(){
 
     changeScaleButton.addEventListener('click', async () =>{
         if(tempIconEl && cityNameEl){
-            const scale = tempIconEl.textContent === 'ºC' ? 'imperial' : 'metric'
-            const dataToDisplay = await processData(cityNameEl.textContent, scale)
-            renderStaticElements(dataToDisplay)
+            try{
+                const scale = tempIconEl.textContent === 'ºC' ? 'imperial' : 'metric'
+                const dataToDisplay = await processData(cityNameEl.textContent, scale)
+                renderStaticElements(dataToDisplay)
+            }catch(err){
+            }
         }else{
             return
         }
