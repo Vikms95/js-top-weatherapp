@@ -21,6 +21,21 @@ body{
   font-weight: 500;
   font-size: 1.3rem;
   gap: 1rem;
+  transition: opacity 2000ms;
+  will-change: opacity;
+}
+
+.container.faded-out{
+  opacity: 0;
+}
+
+.city-name{
+  transition: opacity 2000ms;
+  will-change: opacity;
+}
+
+.city-name.faded-out{
+  opacity: 0;
 }
 
 
@@ -167,6 +182,7 @@ body{
   display: flex;
   gap: .5rem;
   align-self: flex-start;
+  align-items:center;
 }
 
 i.fa-magnifying-glass{
