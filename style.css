@@ -25,6 +25,9 @@ body{
 }
 
 .loader{
+  background-color: rgba(90, 90, 90, 0.3);
+  padding: 3rem 2rem;
+  border-radius: 15px;
   font-size: 2rem;
   color: white;
   position: absolute;
@@ -81,6 +84,7 @@ body{
   gap:.5rem;
 }
 
+/*TODO Toggle button */
 #change-scale .knobs:before{
   content: '';
   position: absolute;
@@ -108,7 +112,7 @@ body{
   background-color: #17c2bd;
 }
 #change-scale.knobs, #change-scale.knobs:before, #change-scale .layer{
-  transition: 0.3s ease all;
+  transition: 0.2s ease all;
 }
 .knobs,
 .layer{
