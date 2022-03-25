@@ -1,22 +1,22 @@
-import icon1d from '/icons/01d.png'
-import icon1n from '/icons/01n.png'
-import icon2d from '/icons/02d.png'
-import icon2n from '/icons/02n.png'
-import icon3d from '/icons/03d.png'
-import icon3n from '/icons/03n.png'
-import icon4d from '/icons/04d.png'
-import icon4n from '/icons/04n.png'
-import icon9d from '/icons/09d.png'
-import icon9n from '/icons/09n.png'
-import icon10d from '/icons/10d.png'
-import icon10n from '/icons/10n.png'
-import icon11d from '/icons/11d.png'
-import ico11n from '/icons/11n.png'
-import icon13d from '/icons/13d.png'
-import icon13n from '/icons/13n.png'
-import icon50d from '/icons/50d.png'
-import icon50n from '/icons/50n.png'
-import iconUnknown from '/icons/unknown.png'
+// import icon1d from '/icons/01d.png'
+// import icon1n from '/icons/01n.png'
+// import icon2d from '/icons/02d.png'
+// import icon2n from '/icons/02n.png'
+// import icon3d from '/icons/03d.png'
+// import icon3n from '/icons/03n.png'
+// import icon4d from '/icons/04d.png'
+// import icon4n from '/icons/04n.png'
+// import icon9d from '/icons/09d.png'
+// import icon9n from '/icons/09n.png'
+// import icon10d from '/icons/10d.png'
+// import icon10n from '/icons/10n.png'
+// import icon11d from '/icons/11d.png'
+// import ico11n from '/icons/11n.png'
+// import icon13d from '/icons/13d.png'
+// import icon13n from '/icons/13n.png'
+// import icon50d from '/icons/50d.png'
+// import icon50n from '/icons/50n.png'
+// import iconUnknown from '/icons/unknown.png'
 
 export function renderStaticElements(dataToDisplay){
     const bodyEl = document.querySelector('body')
@@ -34,6 +34,7 @@ export function renderStaticElements(dataToDisplay){
     const windSpeedEl = document.querySelector('.wind-speed-value')
     const scaleToChangeEl = document.querySelector('.change-scale-desc')
     const searchInput = document.querySelector('input#search')
+    
     const weekDayNames = [
         'Monday', 
         'Tuesday',
@@ -43,6 +44,7 @@ export function renderStaticElements(dataToDisplay){
         'Saturday',
         'Sunday'
     ]
+    console.log(dataToDisplay.icon)
 
     weatherEl.textContent = dataToDisplay.weather
     weatherIconEl.innerHTML = `<img src="../icons/${dataToDisplay.icon}.png"></img>`

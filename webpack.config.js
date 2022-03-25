@@ -7,9 +7,9 @@ module.exports = {
         filename: 'main.js',
         path: path.resolve(__dirname, 'dist'),
     },
-    module:{
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
-    } 
+    // module:{
+    //     test: /\.(png|svg|jpg|jpeg|gif)$/i,
+    //     type: 'asset/resource',
+    // } 
 }
 
