@@ -12,7 +12,8 @@ export function renderStaticElements(dataToDisplay){
     const windSpeedIconEl = document.querySelector('.wind-speed-icon')
     const windSpeedEl = document.querySelector('.wind-speed-value')
     const scaleToChangeEl = document.querySelector('.change-scale-desc')
-  
+    const searchInput = document.querySelector('input#search')
+    
     weatherEl.textContent = dataToDisplay.weather
     weatherIconEl.innerHTML = `<img src="../icons/${dataToDisplay.icon}.png"></img>`
     cityEl.textContent = dataToDisplay.cityName + ', ' + dataToDisplay.countryName
@@ -35,6 +36,7 @@ export function renderStaticElements(dataToDisplay){
     windSpeedIconEl.classList.add('fa-wind') 
     windSpeedEl.textContent = dataToDisplay.windSpeed + ' ' + (dataToDisplay.scale === 'metric' ? 'meter/sec' : 'miles/hour')
     scaleToChangeEl.textContent = 'Change to ' + (dataToDisplay.scale === 'metric' ? 'imperial' : 'metric')
+    searchInput.value = ''
     
     for (let i = 0; i < dataToDisplay.dailyForecast.length; i++) {
         const div = document.querySelector(`.day${i + 1}`)

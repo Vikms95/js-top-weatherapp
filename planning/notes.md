@@ -20,6 +20,6 @@
     <!-- - Set translucid background -->
     <!-- - Set timeout until the timer ends (Promise.race) -->
   - Change bg based on weather?
-  -TODO Implement date
+  -TODO Implement date properly?
   - Implement Spotify music(will need to use Promise.all)
   - Style layout
