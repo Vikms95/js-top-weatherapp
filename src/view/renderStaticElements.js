@@ -74,8 +74,6 @@ export function renderStaticElements(dataToDisplay){
         }
     })
 
-    console.log(iconToUse)
-
     weatherIconEl.innerHTML = `<img src="${iconToUse}"></img>`
     weatherEl.textContent = dataToDisplay.weather
     cityEl.textContent = dataToDisplay.cityName + ', ' + dataToDisplay.countryName
@@ -96,7 +94,6 @@ export function renderStaticElements(dataToDisplay){
     windSpeedIconEl.classList.add('fa-solid') 
     windSpeedIconEl.classList.add('fa-wind') 
     searchInput.value = ''
-    bodyEl.style.backgroundColor = 'blue'
 
     windSpeedEl.textContent = dataToDisplay.windSpeed + ' ' 
                               + (dataToDisplay.scale === 'metric' 
@@ -119,15 +116,12 @@ export function renderStaticElements(dataToDisplay){
 
         let iconToUse
         Object.entries(icons).forEach(icon =>{
-            console.log(typeof(icon[0]))
-            console.log(dataToDisplay.icon)
             if(icon[0] == dataToDisplay.icon){
                 iconToUse = icon[1]
             }
         })
     
         weatherIconEl.innerHTML = `<img src="${iconToUse}"></img>`
-        console.log(weatherIconEl)
         weatherEl.textContent = dataToDisplay.dailyForecast[i].weather
         maxTempEl.textContent = Math.floor(dataToDisplay.dailyForecast[i].temperatureMax) + ' ' + tempIconEl.textContent
         minTempEl.textContent = Math.floor(dataToDisplay.dailyForecast[i].temperatureMin) + ' '+ tempIconEl.textContent
