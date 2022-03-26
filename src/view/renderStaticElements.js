@@ -18,6 +18,7 @@ import icon50d from '/icons/50d.png'
 import icon50n from '/icons/50n.png'
 import iconUnknown from '/icons/unknown.png'
 
+
 export function renderStaticElements(dataToDisplay){
     const bodyEl = document.querySelector('body')
     const weatherEl = document.querySelector('.weather-info')
@@ -45,32 +46,37 @@ export function renderStaticElements(dataToDisplay){
         'Sunday'
     ]
     
-    const icons = [
-        icon1d, 
-        icon1n,
-        icon2d,
-        icon2n,
-        icon3d,
-        icon3n,
-        icon4d,
-        icon4n,
-        icon9d,
-        icon9n,
-        icon10d,
-        icon10n,
-        icon11d,
-        icon11n,
-        icon13d,
-        icon13n,
-        icon50d,
-        icon50n,
-        iconUnknown
+    let icons = {
+        '01d': icon1d,  
+        '01n': icon1n,
+        '02d': icon2d,
+        '02n': icon2n,
+        '03d': icon3d,
+        '03n': icon3n,
+        '04d':icon4d,
+        '04n':icon4n,
+        '09d':icon9d,
+        '09n':icon9n,
+        '10d':icon10d,
+        '10n':icon10n,
+        '11d':icon11d,
+        '11n':icon11n,
+        '13d':icon13d,
+        '13n':icon13n,
+        '50d':icon50d,
+        '50n':icon50n,
+        'unknown':iconUnknown
+    }
+    let iconToUse
+    Object.entries(icons).forEach(icon =>{
+        if(icon[0] == dataToDisplay.icon){
+            iconToUse = icon[1]
+        }
+    })
 
-    ]
+    console.log(iconToUse)
 
-
-    const icon = icons.find(icon => icon.includes(dataToDisplay.icon))
-    weatherIconEl.innerHTML = `<img src="../icons/${dataToDisplay.icon}.png"></img>`
+    weatherIconEl.innerHTML = `<img src="${iconToUse}"></img>`
     weatherEl.textContent = dataToDisplay.weather
     cityEl.textContent = dataToDisplay.cityName + ', ' + dataToDisplay.countryName
     temperatureEl.textContent = dataToDisplay.temperature
@@ -110,11 +116,22 @@ export function renderStaticElements(dataToDisplay){
         const weatherEl = document.querySelector(`.day${i + 1} > .weather-day`)
         const weatherIconEl = document.querySelector(`.day${i + 1} > .icon`)
       
+
+        let iconToUse
+        Object.entries(icons).forEach(icon =>{
+            console.log(typeof(icon[0]))
+            console.log(dataToDisplay.icon)
+            if(icon[0] == dataToDisplay.icon){
+                iconToUse = icon[1]
+            }
+        })
+    
+        weatherIconEl.innerHTML = `<img src="${iconToUse}"></img>`
+        console.log(weatherIconEl)
         weatherEl.textContent = dataToDisplay.dailyForecast[i].weather
         maxTempEl.textContent = Math.floor(dataToDisplay.dailyForecast[i].temperatureMax) + ' ' + tempIconEl.textContent
         minTempEl.textContent = Math.floor(dataToDisplay.dailyForecast[i].temperatureMin) + ' '+ tempIconEl.textContent
         weekDayEl.innerHTML = getWeekdayName(dataToDisplay.time.getDay(), i, weekDayNames)
-        weatherIconEl.innerHTML = `<img src="../icons/${dataToDisplay.dailyForecast[i].icon}.png"></img>`
         
         div.appendChild(weekDayEl)
         div.appendChild(maxTempEl)
