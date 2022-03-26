@@ -1,22 +1,22 @@
-// import icon1d from '/icons/01d.png'
-// import icon1n from '/icons/01n.png'
-// import icon2d from '/icons/02d.png'
-// import icon2n from '/icons/02n.png'
-// import icon3d from '/icons/03d.png'
-// import icon3n from '/icons/03n.png'
-// import icon4d from '/icons/04d.png'
-// import icon4n from '/icons/04n.png'
-// import icon9d from '/icons/09d.png'
-// import icon9n from '/icons/09n.png'
-// import icon10d from '/icons/10d.png'
-// import icon10n from '/icons/10n.png'
-// import icon11d from '/icons/11d.png'
-// import ico11n from '/icons/11n.png'
-// import icon13d from '/icons/13d.png'
-// import icon13n from '/icons/13n.png'
-// import icon50d from '/icons/50d.png'
-// import icon50n from '/icons/50n.png'
-// import iconUnknown from '/icons/unknown.png'
+import icon1d from '/icons/01d.png'
+import icon1n from '/icons/01n.png'
+import icon2d from '/icons/02d.png'
+import icon2n from '/icons/02n.png'
+import icon3d from '/icons/03d.png'
+import icon3n from '/icons/03n.png'
+import icon4d from '/icons/04d.png'
+import icon4n from '/icons/04n.png'
+import icon9d from '/icons/09d.png'
+import icon9n from '/icons/09n.png'
+import icon10d from '/icons/10d.png'
+import icon10n from '/icons/10n.png'
+import icon11d from '/icons/11d.png'
+import icon11n from '/icons/11n.png'
+import icon13d from '/icons/13d.png'
+import icon13n from '/icons/13n.png'
+import icon50d from '/icons/50d.png'
+import icon50n from '/icons/50n.png'
+import iconUnknown from '/icons/unknown.png'
 
 export function renderStaticElements(dataToDisplay){
     const bodyEl = document.querySelector('body')
@@ -44,13 +44,37 @@ export function renderStaticElements(dataToDisplay){
         'Saturday',
         'Sunday'
     ]
-    console.log(dataToDisplay.icon)
+    
+    const icons = [
+        icon1d, 
+        icon1n,
+        icon2d,
+        icon2n,
+        icon3d,
+        icon3n,
+        icon4d,
+        icon4n,
+        icon9d,
+        icon9n,
+        icon10d,
+        icon10n,
+        icon11d,
+        icon11n,
+        icon13d,
+        icon13n,
+        icon50d,
+        icon50n,
+        iconUnknown
 
+    ]
+
+
+    const icon = icons.find(icon => icon.includes(dataToDisplay.icon))
+    weatherIconEl.innerHTML = `<img src="../icons/${dataToDisplay.icon}.png"></img>`
     weatherEl.textContent = dataToDisplay.weather
     cityEl.textContent = dataToDisplay.cityName + ', ' + dataToDisplay.countryName
     temperatureEl.textContent = dataToDisplay.temperature
     tempIconEl.textContent = dataToDisplay.scale === 'metric' ? 'ºC' : 'ºF'
-    weatherIconEl.innerHTML = `<img src="../icons/${dataToDisplay.icon}.png"></img>`
     
     timeEl.textContent = weekDayNames[dataToDisplay.time.getDay()] + ', ' 
                          + dataToDisplay.time.getDate() + ' - ' 
