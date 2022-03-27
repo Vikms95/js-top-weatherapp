@@ -5,7 +5,7 @@ import { addEventListeners } from './logic/addEventListeners'
 
 console.log(bgImage)
 
-document.body.style.backgroundImage = 'url(\'../dist/e6f38d24bcbe65bc4b4a.jpg\')'
+document.body.style.backgroundImage = bgImage
 addEventListeners();
 
 (async function(){
