@@ -1,4 +1,4 @@
-Live : https://vikms95.github.io/js-top-weatherapp/
+# 👉 [LIVE PREVIEW]https://vikms95.github.io/js-top-weatherapp/ 👈
 
 This is a weather app created for the Odin Project curriculum.
 
